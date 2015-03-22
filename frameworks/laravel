@@ -4,7 +4,7 @@ BUILD_DIR="$2"
 basedir="$( cd -P "$( dirname "$0" )" && pwd )"
 
 function requires_laravel() {
-    jq --raw-output '.packages | .[] | .name' < "$BUILD_DIR/composer.lock" | grep -q '^laravel/laravel$'
+    jq --raw-output '.packages | .[] | .name' < "$BUILD_DIR/composer.lock" | grep -q '^laravel/framework$'
 }
 
 function sets_framework_laravel() {
